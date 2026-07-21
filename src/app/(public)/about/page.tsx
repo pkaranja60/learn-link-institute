@@ -6,13 +6,13 @@ import {
   Users,
 } from "lucide-react";
 import type { Metadata } from "next";
-import { CtaBand } from "@/components/sections/cta-band";
-import { PartnersSection } from "@/components/sections/partners-section";
-import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { PlaceholderMedia } from "@/components/shared/placeholder-media";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { siteConfig } from "@/data/site";
+import { PartnersGalleryCarousel, PartnersMarquee } from "@/partners";
+import { CtaBand } from "@/shared";
+import { TestimonialCarousel } from "@/testimonials";
 
 export const metadata: Metadata = {
   description:
@@ -151,8 +151,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <PartnersSection />
-      <TestimonialsSection />
+      <PartnersMarquee />
+      <PartnersGalleryCarousel />
+      <TestimonialCarousel />
 
       <CtaBand
         description="Reach out to discuss training needs, partnership opportunities, or a custom consultancy engagement."

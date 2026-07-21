@@ -12,11 +12,11 @@ import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { CourseCard } from "@/components/shared/course-card";
 import { PlaceholderMedia } from "@/components/shared/placeholder-media";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { getCategory } from "@/data/categories";
 import { courses, getCourse, getCoursesByCategory } from "@/data/courses";
 import { getIcon } from "@/lib/icon-map";
+import { Button } from "@/shared/ui/button";
 
 interface PageProps {
   params: Promise<{ category: string; slug: string }>;

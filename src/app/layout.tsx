@@ -1,9 +1,21 @@
 import type { Metadata } from "next";
+import { Montserrat, Roboto } from "next/font/google";
 import "./globals.css";
 
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
+const roboto = Roboto({
+  subsets: ["latin"],
+  variable: "--font-roboto",
+  weight: ["400", "500", "700"],
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  weight: ["400", "500", "600", "700"],
+});
+
 import { siteConfig } from "@/data/site";
+import { FloatingChat, Footer, Navbar, TopBar } from "@/shared";
 
 export const metadata: Metadata = {
   description: siteConfig.description,
@@ -31,7 +43,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="h-full" lang="en">
+    <html
+      className={`${roboto.variable} ${montserrat.variable} h-full`}
+      lang="en"
+    >
       <body className="flex min-h-full flex-col">
         <a
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
@@ -39,11 +54,13 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        <TopBar />
         <Navbar />
         <main className="flex-1" id="main-content">
           {children}
         </main>
         <Footer />
+        <FloatingChat />
       </body>
     </html>
   );

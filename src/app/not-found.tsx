@@ -1,7 +1,7 @@
 import { Compass } from "lucide-react";
 import Link from "next/link";
 import { PlaceholderMedia } from "@/components/shared/placeholder-media";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/shared/ui/button";
 
 export default function NotFound() {
   return (

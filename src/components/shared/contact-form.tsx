@@ -2,8 +2,6 @@
 
 import { CheckCircle2, Loader2, Send } from "lucide-react";
 import React from "react";
-
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -15,6 +13,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
+import { Button } from "@/shared/ui/button";
 
 interface FormState {
   email: string;

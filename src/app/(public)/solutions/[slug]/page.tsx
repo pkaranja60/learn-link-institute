@@ -5,9 +5,9 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { PlaceholderMedia } from "@/components/shared/placeholder-media";
 import { WorkshopCard } from "@/components/shared/workshop-card";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { getWorkshop, workshops } from "@/data/workshops";
+import { Button } from "@/shared/ui/button";
 
 interface PageProps {
   params: Promise<{ slug: string }>;

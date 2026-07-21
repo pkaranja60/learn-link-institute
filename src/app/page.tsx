@@ -1,30 +1,18 @@
-import { AboutSummary } from "@/components/sections/about-summary";
-import { BlogPreview } from "@/components/sections/blog-preview";
-import { CategoryGrid } from "@/components/sections/category-grid";
-import { CtaBand } from "@/components/sections/cta-band";
-import { FeaturedCourses } from "@/components/sections/featured-courses";
-import { Hero } from "@/components/sections/hero";
-import { PartnersSection } from "@/components/sections/partners-section";
-import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { ShortCoursesGrid, UpcomingCourses } from "@/courses";
+import { AboutSummary, Hero } from "@/marketing";
+import { PartnersGalleryCarousel, PartnersMarquee } from "@/partners";
 
 export default function HomePage() {
   return (
-    <>
+    <div className="flex flex-col gap-20 pb-20">
       <Hero />
       <AboutSummary />
-      <FeaturedCourses />
-      <CategoryGrid />
-      <PartnersSection />
-      <TestimonialsSection />
-      <BlogPreview />
-      <CtaBand
-        description="Talk to our team about open enrollment courses, in-house training, or a custom consultancy engagement."
-        primaryHref="/contact"
-        primaryLabel="Contact Us"
-        secondaryHref="/courses"
-        secondaryLabel="Browse Courses"
-        title="Ready to Build Your Team's Capacity?"
-      />
-    </>
+      <UpcomingCourses />
+      <ShortCoursesGrid />
+      <div className="flex flex-col">
+        <PartnersMarquee />
+        <PartnersGalleryCarousel />
+      </div>
+    </div>
   );
 }

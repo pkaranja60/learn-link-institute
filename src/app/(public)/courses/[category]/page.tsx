@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CtaBand } from "@/components/sections/cta-band";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { CourseCard } from "@/components/shared/course-card";
 import { PlaceholderMedia } from "@/components/shared/placeholder-media";
@@ -8,6 +7,7 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { categories, getCategory } from "@/data/categories";
 import { getCoursesByCategory } from "@/data/courses";
 import { getIcon } from "@/lib/icon-map";
+import { CtaBand } from "@/shared";
 
 interface PageProps {
   params: Promise<{ category: string }>;
