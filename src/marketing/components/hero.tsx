@@ -16,12 +16,12 @@ export function Hero() {
         <div className="relative flex w-full flex-1">
           <HeroSidebar />
 
-          <div className="flex w-full flex-col items-center justify-center py-20 text-center lg:ml-72 lg:w-[calc(100%-288px)]">
-            <div className="relative z-10 flex max-w-3xl flex-col items-center gap-6">
-              <h1 className="font-bold text-white text-xl drop-shadow-md sm:text-4xl lg:text-5xl">
+          <div className="flex w-full flex-col items-end justify-end py-20 text-center lg:ml-72 lg:w-[calc(100%-288px)]">
+            <div className="relative z-10 flex max-w-3xl flex-col items-end gap-6">
+              <h1 className="font-bold text-white drop-shadow-md sm:text-4xl">
                 Short Professional Courses
               </h1>
-              <p className="font-bold text-(--color-orange) text-3xl drop-shadow-md sm:text-xl">
+              <p className="font-semibold text-(--color-orange) drop-shadow-md sm:text-3xl">
                 Empowering Professionals, Transforming Organizations.
               </p>
 

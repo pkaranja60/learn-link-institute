@@ -208,4 +208,21 @@
       );
     background-size: 32px 32px;
   }
+
+  /* Custom Navigation Menu Styles */
+  .nav-trigger-custom {
+    color: #abb8c3;
+    transition: color 0.2s ease-in-out;
+  }
+  .nav-trigger-custom:hover,
+  .nav-trigger-custom[data-state="open"],
+  .nav-trigger-custom[data-open=""] {
+    color: var(--color-orange) !important;
+    background-color: transparent !important;
+  }
+
+  .nav-viewport-flush {
+    margin-top: 0 !important;
+    border-radius: 0 !important;
+  }
 }

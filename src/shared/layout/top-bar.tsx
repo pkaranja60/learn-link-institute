@@ -1,27 +1,41 @@
-import { ChevronDown, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import Link from "next/link";
+import { CustomNavigation } from "../components/custom-navigation";
 
 export function TopBar() {
   return (
-    <div className="bg-(--color-orange) px-4 py-2.5 text-white text-xs sm:px-6 lg:px-8">
+    <div className="border-b bg-orange px-4 py-2.5 text-white text-xs sm:px-6 lg:px-8">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-2 sm:flex-row">
         <div className="flex items-center gap-4">
-          <div className="group relative flex cursor-pointer items-center gap-1 border-white/30 border-r border-l px-4 hover:text-white/80">
-            <span>ENGLISH</span>
-            <ChevronDown className="size-3 text-[#abb8c3]" />
-            <div className="absolute top-full left-0 z-50 hidden min-w-30 bg-white pt-2 text-gray-800 shadow-lg group-hover:block">
-              <div className="flex flex-col">
-                <span className="cursor-pointer px-4 py-2 text-[#abb8c3] hover:text-(--color-orange)">
-                  English
-                </span>
-                <span className="cursor-pointer px-4 py-2 text-[#abb8c3] hover:text-(--color-orange)">
-                  Deutsch
-                </span>
-                <span className="cursor-pointer px-4 py-2 text-[#abb8c3] hover:text-(--color-orange)">
-                  French
-                </span>
-              </div>
-            </div>
+          <div className="group relative flex cursor-pointer items-center gap-1 border-white/30 border-r border-l px-2 hover:text-white/80">
+            <CustomNavigation
+              contentClassName="absolute top-full -left-2 mt-2.5 bg-white shadow-lg !rounded-none border border-gray-200"
+              items={[
+                {
+                  content: (
+                    <div className="flex min-w-30 flex-col p-2">
+                      <span className="cursor-pointer px-4 py-2 text-[#abb8c3] hover:text-(--color-orange)">
+                        English
+                      </span>
+                      <span className="cursor-pointer px-4 py-2 text-[#abb8c3] hover:text-(--color-orange)">
+                        Deutsch
+                      </span>
+                      <span className="cursor-pointer px-4 py-2 text-[#abb8c3] hover:text-(--color-orange)">
+                        French
+                      </span>
+                    </div>
+                  ),
+                  id: "language-dropdown",
+                  label: (
+                    <span className="text-white uppercase transition-colors hover:text-white/80">
+                      English
+                    </span>
+                  ),
+                },
+              ]}
+              triggerClassName="bg-transparent hover:bg-transparent data-[state=open]:bg-transparent text-white focus:bg-transparent !p-0 h-auto font-normal rounded-none"
+              viewport={false}
+            />
           </div>
           <span className="hidden sm:inline">YOUR TRAINING PARTNER...</span>
         </div>

@@ -1,6 +1,7 @@
 import { ChevronDown, Menu, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { CustomNavigation } from "../components/custom-navigation";
 import { Button } from "../ui/button";
 
 const NAV_LINKS = [
@@ -76,37 +77,33 @@ export function Navbar() {
             <ChevronDown className="size-4 text-white" />
           </div>
 
-          <nav className="ml-auto flex items-center">
-            <ul className="flex flex-wrap items-center gap-x-8">
-              {NAV_LINKS.map((link) => (
-                <li className="group relative" key={link.label}>
-                  <Link
-                    className="flex items-center gap-1 font-medium text-gray-700 text-sm uppercase hover:text-orange"
-                    href={link.href}
-                  >
-                    {link.label}
-                    {link.label !== "HOME" && (
-                      <ChevronDown className="size-4 text-[#abb8c3]" />
-                    )}
-                  </Link>
-                  {link.label !== "HOME" && (
-                    <div className="absolute top-full left-0 z-50 hidden min-w-55 bg-white py-2 shadow-lg group-hover:block">
-                      <div className="flex flex-col">
-                        <span className="cursor-pointer px-4 py-2 text-[#abb8c3] text-sm hover:text-orange">
-                          Sample Item 1
-                        </span>
-                        <span className="cursor-pointer px-4 py-2 text-[#abb8c3] text-sm hover:text-orange">
-                          Sample Item 2
-                        </span>
-                        <span className="cursor-pointer px-4 py-2 text-[#abb8c3] text-sm hover:text-orange">
-                          Sample Item 3
-                        </span>
-                      </div>
+          <nav className="ml-auto flex items-stretch">
+            <CustomNavigation
+              className="h-full"
+              contentClassName="absolute top-full left-0 mt-4.5 bg-white border border-gray-200 shadow-lg !rounded-none z-50 min-w-55"
+              items={NAV_LINKS.map((link) => ({
+                content:
+                  link.label === "HOME" ? undefined : (
+                    <div className="flex flex-col py-2">
+                      <span className="cursor-pointer px-4 py-2 text-[#abb8c3] text-sm hover:text-orange">
+                        Sample Item 1
+                      </span>
+                      <span className="cursor-pointer px-4 py-2 text-[#abb8c3] text-sm hover:text-orange">
+                        Sample Item 2
+                      </span>
+                      <span className="cursor-pointer px-4 py-2 text-[#abb8c3] text-sm hover:text-orange">
+                        Sample Item 3
+                      </span>
                     </div>
-                  )}
-                </li>
-              ))}
-            </ul>
+                  ),
+                href: link.label === "HOME" ? link.href : undefined,
+                id: link.label,
+                label: link.label,
+              }))}
+              listClassName="gap-x-8 h-full items-stretch"
+              triggerClassName="font-medium text-gray-700 text-sm uppercase hover:bg-transparent data-[state=open]:bg-transparent focus:bg-transparent bg-transparent nav-trigger-custom p-0 rounded-none h-full flex items-center"
+              viewport={false}
+            />
           </nav>
         </div>
       </div>
