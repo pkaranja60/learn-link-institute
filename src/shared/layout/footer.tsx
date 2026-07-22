@@ -12,7 +12,7 @@ export function Footer() {
       {/* Decorative dark overlay */}
       <div className="absolute inset-0 bg-black/85" />
 
-      <div className="relative px-4 pt-20 pb-16 sm:px-6 lg:px-8">
+      <div className="relative px-4 pt-10 pb-2 sm:px-6 lg:px-8">
         <FooterColumns />
       </div>
 

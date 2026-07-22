@@ -88,7 +88,7 @@ export function Carousel({
           <button
             aria-label="Previous slide"
             className={cn(
-              "absolute top-1/2 -translate-y-1/2 rounded-full bg-white p-2 text-[var(--color-navy)] shadow-md hover:bg-gray-50",
+              "absolute top-1/2 -translate-y-1/2 rounded-full bg-white p-2 text-(--color-navy) shadow-md hover:bg-gray-50",
               leftControlClassName
             )}
             onClick={scrollPrev}
@@ -99,7 +99,7 @@ export function Carousel({
           <button
             aria-label="Next slide"
             className={cn(
-              "absolute top-1/2 -translate-y-1/2 rounded-full bg-white p-2 text-[var(--color-navy)] shadow-md hover:bg-gray-50",
+              "absolute top-1/2 -translate-y-1/2 rounded-full bg-white p-2 text-(--color-navy) shadow-md hover:bg-gray-50",
               rightControlClassName
             )}
             onClick={scrollNext}
@@ -111,15 +111,13 @@ export function Carousel({
       ) : null}
 
       {showDots ? (
-        <div className="mt-8 flex justify-center gap-2">
+        <div className="mt-2 flex justify-center gap-2">
           {scrollSnaps.map((_, index) => (
             <button
               aria-label={`Go to slide ${index + 1}`}
               className={cn(
-                "size-2.5 rounded-full transition-colors",
-                index === selectedIndex
-                  ? "bg-[var(--color-orange)]"
-                  : "bg-gray-300"
+                "size-1.5 rounded-full transition-colors",
+                index === selectedIndex ? "bg-(--color-orange)" : "bg-gray-300"
               )}
               // biome-ignore lint/suspicious/noArrayIndexKey: Dot navigation array
               key={index}

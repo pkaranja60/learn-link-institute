@@ -17,7 +17,7 @@ export function PartnersGalleryCarousel() {
         autoplay={true}
         itemClassName="lg:flex-[0_0_25%] md:flex-[0_0_50%] pl-4"
         showControls={false}
-        showDots={true}
+        showDots={false}
       >
         {GALLERY_IMAGES.map((src, idx) => (
           <div

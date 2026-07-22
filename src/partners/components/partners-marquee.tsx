@@ -31,12 +31,12 @@ const PARTNER_LOGOS = [
 
 export function PartnersMarquee() {
   return (
-    <div className="w-full py-12">
+    <div className="w-full">
       <div className="mb-12 flex flex-col items-center text-center">
-        <span className="font-semibold text-[var(--color-orange)] text-sm uppercase tracking-wider underline underline-offset-4">
+        <span className="font-semibold text-(--color-orange) text-sm uppercase tracking-wider underline underline-offset-4">
           Clientele
         </span>
-        <h2 className="mt-2 font-bold text-3xl text-[var(--color-navy)] sm:text-4xl">
+        <h2 className="mt-2 font-bold text-(--color-navy) text-3xl sm:text-4xl">
           Our Partners
         </h2>
       </div>
