@@ -8,15 +8,17 @@ import {
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Breadcrumbs } from "@/components/shared/breadcrumbs";
-import { CourseCard } from "@/components/shared/course-card";
-import { PlaceholderMedia } from "@/components/shared/placeholder-media";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+import { CourseCard } from "@/courses";
 import { getCategory } from "@/data/categories";
 import { courses, getCourse, getCoursesByCategory } from "@/data/courses";
 import { getIcon } from "@/lib/icon-map";
+import {
+  Badge,
+  Breadcrumbs,
+  Button,
+  PlaceholderMedia,
+  Separator,
+} from "@/shared";
 
 interface PageProps {
   params: Promise<{ category: string; slug: string }>;
@@ -146,7 +148,7 @@ export default async function CourseDetailPage({ params }: PageProps) {
           <aside className="lg:col-span-1">
             <div className="sticky top-24 flex flex-col gap-6">
               <PlaceholderMedia
-                className="aspect-[4/3] w-full rounded-xl"
+                className="aspect-4/3 w-full rounded-xl"
                 icon={Icon}
                 label={`${course.title} illustration`}
                 tone={(() => {

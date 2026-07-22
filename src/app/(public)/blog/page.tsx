@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { CtaBand } from "@/components/sections/cta-band";
-import { BlogCard } from "@/components/shared/blog-card";
-import { Breadcrumbs } from "@/components/shared/breadcrumbs";
-import { SectionHeading } from "@/components/shared/section-heading";
 import { blogPosts } from "@/data/blog";
+import { BlogCard } from "@/marketing";
+import { Breadcrumbs, CtaBand, SectionHeading } from "@/shared";
 
 export const metadata: Metadata = {
   description:

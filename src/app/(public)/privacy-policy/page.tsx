@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { siteConfig } from "@/data/site";
+import { Breadcrumbs } from "@/shared";
 
 export const metadata: Metadata = {
   description:
@@ -22,7 +22,7 @@ const sections = [
     title: "3. Cookies & Analytics",
   },
   {
-    body: "Placeholder text clarifying that personal information would not be sold, and describing any limited circumstances under which it might be shared with service providers or as required by law.",
+    body: "Placeholder text describing the limited circumstances under which information might be shared with service providers or as required by law.",
     title: "4. Data Sharing",
   },
   {

@@ -106,12 +106,16 @@
   --color-teal-500: var(--teal-500);
   --color-teal-600: var(--teal-600);
 
+  --color-navy: #272f5e;
+  --color-orange: #e97300;
+  --color-lightblue: #4db8d6;
+
   --font-sans:
-    "Segoe UI", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue",
-    Arial, sans-serif;
+    var(--font-roboto), "Segoe UI", ui-sans-serif, system-ui, -apple-system,
+    sans-serif;
   --font-display:
-    "Segoe UI Semibold", ui-sans-serif, system-ui, -apple-system,
-    "Helvetica Neue", Arial, sans-serif;
+    var(--font-montserrat), "Segoe UI Semibold", ui-sans-serif, system-ui,
+    sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -203,5 +207,22 @@
         transparent 1px
       );
     background-size: 32px 32px;
+  }
+
+  /* Custom Navigation Menu Styles */
+  .nav-trigger-custom {
+    color: #abb8c3;
+    transition: color 0.2s ease-in-out;
+  }
+  .nav-trigger-custom:hover,
+  .nav-trigger-custom[data-state="open"],
+  .nav-trigger-custom[data-open=""] {
+    color: var(--color-orange) !important;
+    background-color: transparent !important;
+  }
+
+  .nav-viewport-flush {
+    margin-top: 0 !important;
+    border-radius: 0 !important;
   }
 }

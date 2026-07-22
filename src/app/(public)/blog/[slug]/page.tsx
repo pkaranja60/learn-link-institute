@@ -1,11 +1,9 @@
 import { CalendarDays, Clock, Newspaper, User } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { BlogCard } from "@/components/shared/blog-card";
-import { Breadcrumbs } from "@/components/shared/breadcrumbs";
-import { PlaceholderMedia } from "@/components/shared/placeholder-media";
-import { Badge } from "@/components/ui/badge";
 import { blogPosts, getBlogPost } from "@/data/blog";
+import { BlogCard } from "@/marketing";
+import { Badge, Breadcrumbs, PlaceholderMedia } from "@/shared";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -66,7 +64,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
           </div>
 
           <PlaceholderMedia
-            className="mt-8 aspect-[16/9] w-full rounded-2xl"
+            className="mt-8 aspect-video w-full rounded-2xl"
             icon={Newspaper}
             label={`${post.title} cover graphic`}
             tone={post.coverTone}

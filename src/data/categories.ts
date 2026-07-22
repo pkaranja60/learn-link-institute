@@ -67,6 +67,10 @@ export const categories: CourseCategory[] = [
   },
 ];
 
+export function getCategories() {
+  return categories;
+}
+
 export function getCategory(slug: string) {
   return categories.find((c) => c.slug === slug);
 }

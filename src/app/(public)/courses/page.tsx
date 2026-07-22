@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import { CtaBand } from "@/components/sections/cta-band";
-import { Breadcrumbs } from "@/components/shared/breadcrumbs";
-import { CategoryCard } from "@/components/shared/category-card";
-import { CourseCard } from "@/components/shared/course-card";
-import { SectionHeading } from "@/components/shared/section-heading";
+import { CategoryCard, CourseCard } from "@/courses";
 import { categories } from "@/data/categories";
 import { courses } from "@/data/courses";
+import { Breadcrumbs, CtaBand, SectionHeading } from "@/shared";
 
 export const metadata: Metadata = {
   description:
