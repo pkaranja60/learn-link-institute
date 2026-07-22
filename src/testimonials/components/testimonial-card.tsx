@@ -50,7 +50,7 @@ export function TestimonialCard({
             <Image alt={name} className="object-cover" fill src={avatar} />
           </div>
         ) : (
-          <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-orange)] font-bold text-lg text-white">
+          <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-(--color-orange) font-bold text-lg text-white">
             {initial || name.charAt(0)}
           </div>
         )}
@@ -68,7 +68,7 @@ export function TestimonialCard({
           <Star
             className={`size-4 ${
               i < rating
-                ? "fill-[var(--color-orange)] text-[var(--color-orange)]"
+                ? "fill-(--color-orange) text-(--color-orange)"
                 : "fill-gray-200 text-gray-200"
             }`}
             // biome-ignore lint/suspicious/noArrayIndexKey: Static star rating

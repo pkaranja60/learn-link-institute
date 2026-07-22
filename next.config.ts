@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
     remotePatterns: [
       {
@@ -17,6 +16,25 @@ const nextConfig: NextConfig = {
         protocol: "https",
       },
     ],
+  },
+  async redirects() {
+    return [
+      {
+        destination: "/courses",
+        permanent: true,
+        source: "/subjects",
+      },
+      {
+        destination: "/contact",
+        permanent: true,
+        source: "/venues",
+      },
+      {
+        destination: "/solutions",
+        permanent: true,
+        source: "/workshops",
+      },
+    ];
   },
 };
 

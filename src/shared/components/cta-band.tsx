@@ -19,14 +19,14 @@ export function CtaBand({
   secondaryLabel,
 }: CtaBandProps) {
   return (
-    <section className="bg-[var(--color-navy)] py-16 text-center text-white sm:py-24">
+    <section className="bg-(--color-navy) py-16 text-center text-white sm:py-24">
       <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
         <h2 className="mb-4 font-bold text-3xl sm:text-4xl">{title}</h2>
         <p className="mb-8 text-gray-300 text-lg">{description}</p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
             asChild
-            className="bg-[var(--color-orange)] text-white hover:bg-[var(--color-orange)]/90"
+            className="bg-(--color-orange) text-white hover:bg-orange/90"
             size="lg"
           >
             <Link href={primaryHref}>{primaryLabel}</Link>

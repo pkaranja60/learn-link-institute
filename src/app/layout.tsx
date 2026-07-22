@@ -15,7 +15,7 @@ const montserrat = Montserrat({
 });
 
 import { siteConfig } from "@/data/site";
-import { FloatingChat, Footer, Navbar, TopBar } from "@/shared";
+import { FloatingChat, Footer, Navbar, NavbarProvider, TopBar } from "@/shared";
 
 export const metadata: Metadata = {
   description: siteConfig.description,
@@ -48,19 +48,21 @@ export default function RootLayout({
       lang="en"
     >
       <body className="flex min-h-full flex-col">
-        <a
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
-          href="#main-content"
-        >
-          Skip to main content
-        </a>
-        <TopBar />
-        <Navbar />
-        <main className="flex-1" id="main-content">
-          {children}
-        </main>
-        <Footer />
-        <FloatingChat />
+        <NavbarProvider>
+          <a
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-100 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+            href="#main-content"
+          >
+            Skip to main content
+          </a>
+          <TopBar />
+          <Navbar />
+          <main className="flex-1" id="main-content">
+            {children}
+          </main>
+          <Footer />
+          <FloatingChat />
+        </NavbarProvider>
       </body>
     </html>
   );

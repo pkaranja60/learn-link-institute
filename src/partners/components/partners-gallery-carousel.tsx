@@ -21,7 +21,7 @@ export function PartnersGalleryCarousel() {
       >
         {GALLERY_IMAGES.map((src, idx) => (
           <div
-            className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-sm"
+            className="relative aspect-4/3 overflow-hidden rounded-lg shadow-sm"
             key={src}
           >
             <Image

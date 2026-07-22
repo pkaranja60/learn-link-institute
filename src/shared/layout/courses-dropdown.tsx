@@ -2,37 +2,15 @@
 
 import { ChevronRight, Globe } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
-import { CustomNavigation } from "@/shared";
-import { useNavbar } from "@/shared/layout/navbar-context";
-import { CATEGORIES } from "./hero-sidebar.data";
+import { CATEGORIES } from "@/marketing/components/hero-sidebar.data";
+import { CustomNavigation } from "../components/custom-navigation";
 
-export function HeroSidebar() {
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const { isNavSticky } = useNavbar();
+// ─────────────────────────────────────────────
+// SECTION: Nav Items Builder
+// ─────────────────────────────────────────────
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (typeof window !== "undefined") {
-        if (window.scrollY > lastScrollY && window.scrollY > 100) {
-          setIsVisible(false);
-        } else {
-          setIsVisible(true);
-        }
-        setLastScrollY(window.scrollY);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
-
-  // Hide sidebar when navbar is sticky (user scrolled past top row)
-  const shouldShow = isVisible && !isNavSticky;
-
-  const navItems = [
+function buildNavItems() {
+  return [
     ...CATEGORIES.map((item) => ({
       content: (
         <div className="h-full w-150 overflow-y-auto border border-gray-200 border-l-0 bg-white p-8 shadow-xl">
@@ -135,16 +113,17 @@ export function HeroSidebar() {
       ),
     },
   ];
+}
+
+// ─────────────────────────────────────────────
+// SECTION: Dropdown Component
+// ─────────────────────────────────────────────
+
+export function CoursesDropdown() {
+  const navItems = buildNavItems();
 
   return (
-    <div
-      className={cn(
-        "absolute -top-2 -left-4 z-40 hidden w-72 border bg-white transition-all duration-300 sm:-left-6 lg:-left-8 lg:block",
-        shouldShow
-          ? "translate-y-0 opacity-100"
-          : "pointer-events-none -translate-y-10 opacity-0"
-      )}
-    >
+    <div className="absolute top-full left-0 z-50 w-72 border border-gray-200 border-t-0 bg-white shadow-lg">
       <CustomNavigation
         contentClassName="absolute left-full group-data-[viewport=false]/navigation-menu:!-top-px group-data-[viewport=false]/navigation-menu:!-bottom-px z-50 !mt-0 !p-0 ml-px border-none bg-transparent shadow-none h-full"
         hideChevron={true}
