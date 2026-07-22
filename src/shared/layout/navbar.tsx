@@ -25,7 +25,7 @@ export function Navbar() {
               <Image
                 alt="Perk Group Africa"
                 className="h-16 w-auto"
-                height={64}
+                height={20}
                 priority
                 sizes="(max-width: 768px) 200px, 200px"
                 src="/images/logo.jpg"

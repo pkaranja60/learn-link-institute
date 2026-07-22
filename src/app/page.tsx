@@ -4,7 +4,7 @@ import { PartnersGalleryCarousel, PartnersMarquee } from "@/partners";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col gap-20 pb-20">
+    <div className="flex flex-col">
       <Hero />
       <AboutSummary />
       <UpcomingCourses />

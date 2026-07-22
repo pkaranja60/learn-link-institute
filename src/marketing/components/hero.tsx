@@ -4,7 +4,7 @@ import { HeroSidebar } from "./hero-sidebar";
 export function Hero() {
   return (
     <div
-      className="relative mt-2 flex min-h-100 w-full bg-center bg-cover"
+      className="relative mx-2 mt-2 flex min-h-100 bg-center bg-cover"
       style={{
         backgroundImage:
           'url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop")',

@@ -2,7 +2,7 @@ import { Stats } from "./stats";
 
 export function AboutSummary() {
   return (
-    <section className="mx-auto flex w-full max-w-7xl flex-col gap-12 px-4 sm:px-6 lg:flex-row lg:px-8">
+    <section className="mx-auto flex w-full max-w-7xl flex-col gap-12 px-4 pt-20 sm:px-6 lg:flex-row lg:px-8">
       {/* Left side: Stats */}
       <Stats />
 
