@@ -16,12 +16,6 @@ interface PlaceholderMediaProps {
   tone?: keyof typeof toneMap;
 }
 
-/**
- * Original, license-free placeholder visual used in place of photography or
- * illustration assets. Renders a soft gradient tile with a grid overlay and
- * an icon so every content slot has an intentional, on-brand visual without
- * depending on any external or copyrighted imagery.
- */
 export function PlaceholderMedia({
   tone = "brand",
   icon: Icon = ImageIcon,
@@ -32,7 +26,7 @@ export function PlaceholderMedia({
     <div
       aria-label={label ?? "Decorative placeholder graphic"}
       className={cn(
-        "relative flex items-center justify-center overflow-hidden bg-gradient-to-br",
+        "relative flex items-center justify-center overflow-hidden bg-linear-to-br",
         toneMap[tone],
         className
       )}

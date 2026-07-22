@@ -2,12 +2,9 @@ import { CheckCircle2, Clock, Settings2 } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Breadcrumbs } from "@/components/shared/breadcrumbs";
-import { PlaceholderMedia } from "@/components/shared/placeholder-media";
-import { WorkshopCard } from "@/components/shared/workshop-card";
-import { Separator } from "@/components/ui/separator";
+import { WorkshopCard } from "@/courses";
 import { getWorkshop, workshops } from "@/data/workshops";
-import { Button } from "@/shared/ui/button";
+import { Breadcrumbs, Button, PlaceholderMedia, Separator } from "@/shared";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -83,7 +80,7 @@ export default async function WorkshopDetailPage({ params }: PageProps) {
           <aside className="lg:col-span-1">
             <div className="sticky top-24 flex flex-col gap-6">
               <PlaceholderMedia
-                className="aspect-[4/3] w-full rounded-xl"
+                className="aspect-4/3 w-full rounded-xl"
                 icon={Settings2}
                 label={`${workshop.title} illustration`}
                 tone="gold"

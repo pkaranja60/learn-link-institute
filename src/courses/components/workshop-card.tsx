@@ -1,6 +1,6 @@
 import { ArrowRight, Clock } from "lucide-react";
 import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/shared";
 import type { Workshop } from "@/types";
 
 export function WorkshopCard({ workshop }: { workshop: Workshop }) {

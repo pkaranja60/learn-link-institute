@@ -1,9 +1,8 @@
 import { Calendar, Clock, MapPin } from "lucide-react";
 import Link from "next/link";
-import { PlaceholderMedia } from "@/components/shared/placeholder-media";
-import { Badge } from "@/components/ui/badge";
 import { getCategory } from "@/data/categories";
 import { getIcon } from "@/lib/icon-map";
+import { Badge, PlaceholderMedia } from "@/shared";
 import type { Course } from "@/types";
 
 export function CourseCard({ course }: { course: Course }) {

@@ -1,3 +1,4 @@
+import { SectionHeading } from "@/shared";
 import { Stats } from "./stats";
 
 export function AboutSummary() {
@@ -8,14 +9,12 @@ export function AboutSummary() {
 
       {/* Right side: About Text */}
       <div className="flex flex-1 flex-col justify-start py-2">
-        <div className="mb-6 flex flex-col items-center gap-2">
-          <span className="font-medium text-(--color-orange) text-xs uppercase tracking-wider underline underline-offset-4">
-            About Us
-          </span>
-          <h2 className="text-center font-bold text-(--color-navy) text-xl">
-            Perk Group Africa
-          </h2>
-        </div>
+        <SectionHeading
+          align="center"
+          className="mb-6"
+          eyebrow="About Us"
+          title="Perk Group Africa"
+        />
 
         <div className="flex flex-col gap-4 text-start text-gray-800 text-sm">
           <p>

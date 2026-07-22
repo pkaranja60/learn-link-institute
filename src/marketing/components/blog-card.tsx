@@ -1,7 +1,6 @@
 import { CalendarDays, Clock, Newspaper } from "lucide-react";
 import Link from "next/link";
-import { PlaceholderMedia } from "@/components/shared/placeholder-media";
-import { Badge } from "@/components/ui/badge";
+import { Badge, PlaceholderMedia } from "@/shared";
 import type { BlogPost } from "@/types";
 
 export function BlogCard({ post }: { post: BlogPost }) {

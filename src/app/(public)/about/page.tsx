@@ -6,12 +6,14 @@ import {
   Users,
 } from "lucide-react";
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/shared/breadcrumbs";
-import { PlaceholderMedia } from "@/components/shared/placeholder-media";
-import { SectionHeading } from "@/components/shared/section-heading";
 import { siteConfig } from "@/data/site";
 import { PartnersGalleryCarousel, PartnersMarquee } from "@/partners";
-import { CtaBand } from "@/shared";
+import {
+  Breadcrumbs,
+  CtaBand,
+  PlaceholderMedia,
+  SectionHeading,
+} from "@/shared";
 import { TestimonialCarousel } from "@/testimonials";
 
 export const metadata: Metadata = {
@@ -82,7 +84,7 @@ export default function AboutPage() {
             </dl>
           </div>
           <PlaceholderMedia
-            className="aspect-[4/3] w-full rounded-2xl"
+            className="aspect-4/3 w-full rounded-2xl"
             icon={Building2}
             label="Training center illustration"
             tone="brand"

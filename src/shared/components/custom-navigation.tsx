@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import type * as React from "react";
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,13 +11,12 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
+} from "../ui/navigation-menu";
 
 export interface CustomNavItem {
   content?: React.ReactNode;
   href?: string;
-  id?: string; // Optional unique identifier for React keys
+  id?: string;
   label: React.ReactNode;
 }
 

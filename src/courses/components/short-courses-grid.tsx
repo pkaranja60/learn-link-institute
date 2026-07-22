@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { SectionHeading } from "@/shared";
 
 const CATEGORIES = [
   {
@@ -64,25 +65,18 @@ const CATEGORIES = [
 export function ShortCoursesGrid() {
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      {/* Header section (Left-aligned as in screenshot) */}
       <div className="mb-10 flex flex-col items-start text-left">
-        <h2 className="font-bold text-(--color-navy) text-xl">
-          Short Professional Courses
-        </h2>
-        <p className="mt-3 max-w-5xl text-gray-600 text-sm leading-relaxed">
-          We offer professional training courses that equip individuals and
-          organizations with essential skills across sectors. Delivered in
-          person, online, or in-house, our programs are practical, flexible, and
-          led by expert trainers committed to empowering participants to excel
-          in today&apos;s dynamic workforce.
-        </p>
+        <SectionHeading
+          className="max-w-5xl text-left"
+          description="We offer professional training courses that equip individuals and organizations with essential skills across sectors. Delivered in person, online, or in-house, our programs are practical, flexible, and led by expert trainers committed to empowering participants to excel in today's dynamic workforce."
+          title="Short Professional Courses"
+        />
         <p className="mt-4 font-bold text-gray-900 text-sm">
           Click on the category to explore and select the course that best suits
           your needs.
         </p>
       </div>
 
-      {/* Grid section */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {CATEGORIES.map((category) => (
           <Link

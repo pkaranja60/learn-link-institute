@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
+import { SectionHeading } from "@/shared";
 
 const PARTNER_LOGOS = [
   {
@@ -32,14 +33,12 @@ const PARTNER_LOGOS = [
 export function PartnersMarquee() {
   return (
     <div className="w-full">
-      <div className="mb-12 flex flex-col items-center text-center">
-        <span className="font-semibold text-(--color-orange) text-sm uppercase tracking-wider underline underline-offset-4">
-          Clientele
-        </span>
-        <h2 className="mt-2 font-bold text-(--color-navy) text-3xl sm:text-4xl">
-          Our Partners
-        </h2>
-      </div>
+      <SectionHeading
+        align="center"
+        className="mb-12"
+        eyebrow="Clientele"
+        title="Our Partners"
+      />
 
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <Marquee

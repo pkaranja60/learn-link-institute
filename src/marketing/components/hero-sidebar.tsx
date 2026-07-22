@@ -1,64 +1,11 @@
 "use client";
 
-import {
-  Briefcase,
-  Calculator,
-  ChevronRight,
-  Database,
-  Globe,
-  Leaf,
-  LineChart,
-  Map as MapIcon,
-  TrendingUp,
-  Users,
-} from "lucide-react";
+import { ChevronRight, Globe } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { CustomNavigation } from "@/shared/components/custom-navigation";
-
-const CATEGORIES = [
-  {
-    hasChildren: true,
-    icon: <Database className="size-4" />,
-    label: "DATA MANAGEMENT & ANALYSIS",
-  },
-  {
-    hasChildren: true,
-    icon: <TrendingUp className="size-4" />,
-    label: "STRATEGIC MANAGEMENT",
-  },
-  {
-    hasChildren: true,
-    icon: <Calculator className="size-4" />,
-    label: "ACCOUNTING & FINANCIAL MANAGEMENT",
-  },
-  {
-    hasChildren: true,
-    icon: <Users className="size-4" />,
-    label: "GENDER PROTECTION",
-  },
-  {
-    hasChildren: true,
-    icon: <Briefcase className="size-4" />,
-    label: "PROJECT MANAGEMENT",
-  },
-  {
-    hasChildren: true,
-    icon: <MapIcon className="size-4" />,
-    label: "GIS COURSES",
-  },
-  {
-    hasChildren: true,
-    icon: <LineChart className="size-4" />,
-    label: "MONITORING & EVALUATION",
-  },
-  {
-    hasChildren: true,
-    icon: <Leaf className="size-4" />,
-    label: "AGRICULTURE & CLIMATE CHANGE",
-  },
-];
+import { CustomNavigation } from "@/shared";
+import { CATEGORIES } from "./hero-sidebar.data";
 
 export function HeroSidebar() {
   const [isVisible, setIsVisible] = useState(true);
@@ -88,46 +35,22 @@ export function HeroSidebar() {
             ALL {item.label} COURSES
           </h3>
           <ul className="flex flex-col gap-4">
-            <li>
-              <Link
-                className="block text-gray-500 text-sm transition-colors hover:text-(--color-orange)"
-                href="#"
-              >
-                Training Course on Mobile Data Collection using ODK
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="block text-gray-500 text-sm transition-colors hover:text-(--color-orange)"
-                href="#"
-              >
-                Training Course on Intermediate Excel
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="block text-gray-500 text-sm transition-colors hover:text-(--color-orange)"
-                href="#"
-              >
-                Training Course on Advanced Excel
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="block text-gray-500 text-sm transition-colors hover:text-(--color-orange)"
-                href="#"
-              >
-                Training Course on Advanced Financial Modeling with Excel
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="block text-gray-500 text-sm transition-colors hover:text-(--color-orange)"
-                href="#"
-              >
-                Training Course on Data Analytics with Advanced Excel
-              </Link>
-            </li>
+            {[
+              "Training Course on Mobile Data Collection using ODK",
+              "Training Course on Intermediate Excel",
+              "Training Course on Advanced Excel",
+              "Training Course on Advanced Financial Modeling with Excel",
+              "Training Course on Data Analytics with Advanced Excel",
+            ].map((title) => (
+              <li key={title}>
+                <Link
+                  className="block text-gray-500 text-sm transition-colors hover:text-(--color-orange)"
+                  href="#"
+                >
+                  {title}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       ),

@@ -1,10 +1,8 @@
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/shared/breadcrumbs";
-import { ContactForm } from "@/components/shared/contact-form";
-import { PlaceholderMedia } from "@/components/shared/placeholder-media";
-import { SectionHeading } from "@/components/shared/section-heading";
 import { siteConfig } from "@/data/site";
+import { ContactForm } from "@/marketing";
+import { Breadcrumbs, PlaceholderMedia, SectionHeading } from "@/shared";
 
 export const metadata: Metadata = {
   description:
@@ -40,7 +38,7 @@ export default function ContactPage() {
           <div className="lg:col-span-2">
             <div className="flex flex-col gap-6">
               <PlaceholderMedia
-                className="aspect-[4/3] w-full rounded-2xl"
+                className="aspect-4/3 w-full rounded-2xl"
                 icon={MapPin}
                 label="Office location map placeholder"
                 tone="teal"
