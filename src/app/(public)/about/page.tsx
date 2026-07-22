@@ -269,11 +269,11 @@ export default function AboutPage() {
                 Accreditation Partners
               </h4>
               <div className="flex items-center gap-6">
-                <div className="font-bold text-3xl text-red-700 tracking-tighter">
+                <div className="font-bold text-7xl text-red-700 tracking-tighter">
                   PECB
                 </div>
                 <div className="flex flex-col items-center text-sky-900">
-                  <span className="font-black text-3xl tracking-tight">
+                  <span className="font-black text-7xl tracking-tight">
                     NITA
                   </span>
                   <span className="font-semibold text-[8px] leading-tight">
